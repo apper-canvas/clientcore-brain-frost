@@ -11,14 +11,13 @@ import { contactService } from '@/services/api/contactService';
 const ContactForm = ({ isOpen, onClose, onContactCreated }) => {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    company: '',
-    position: '',
-    status: 'active',
-    notes: ''
+    first_name_c: '',
+    last_name_c: '',
+    email_c: '',
+    phone_c: '',
+    company_c: '',
+    position_c: '',
+    tags_c: []
   });
   const [errors, setErrors] = useState({});
 
@@ -42,25 +41,25 @@ const ContactForm = ({ isOpen, onClose, onContactCreated }) => {
     }
   };
 
-  const validateForm = () => {
+const validateForm = () => {
     const newErrors = {};
 
-    if (!formData.firstName.trim()) {
-      newErrors.firstName = 'First name is required';
+    if (!formData.first_name_c.trim()) {
+      newErrors.first_name_c = 'First name is required';
     }
 
-    if (!formData.lastName.trim()) {
-      newErrors.lastName = 'Last name is required';
+    if (!formData.last_name_c.trim()) {
+      newErrors.last_name_c = 'Last name is required';
     }
 
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
+    if (!formData.email_c.trim()) {
+      newErrors.email_c = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email_c)) {
+      newErrors.email_c = 'Email is invalid';
     }
 
-if (formData.phone && !/^[\d\s\-+()]+$/.test(formData.phone)) {
-      newErrors.phone = 'Phone number is invalid';
+    if (formData.phone_c && !/^[\d\s\-+()]+$/.test(formData.phone_c)) {
+      newErrors.phone_c = 'Phone number is invalid';
     }
 
     setErrors(newErrors);
@@ -77,10 +76,10 @@ if (formData.phone && !/^[\d\s\-+()]+$/.test(formData.phone)) {
 
     setLoading(true);
     
-    try {
+try {
       const newContact = await contactService.create({
         ...formData,
-        tags: [] // Initialize empty tags array
+        Name: `${formData.first_name_c} ${formData.last_name_c}`
       });
       
       toast.success('Contact created successfully!');
@@ -94,17 +93,16 @@ if (formData.phone && !/^[\d\s\-+()]+$/.test(formData.phone)) {
     }
   };
 
-  const handleClose = () => {
+const handleClose = () => {
     if (!loading) {
       setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        company: '',
-        position: '',
-        status: 'active',
-        notes: ''
+        first_name_c: '',
+        last_name_c: '',
+        email_c: '',
+        phone_c: '',
+        company_c: '',
+        position_c: '',
+        tags_c: []
       });
       setErrors({});
       onClose();
@@ -153,10 +151,10 @@ if (formData.phone && !/^[\d\s\-+()]+$/.test(formData.phone)) {
                     First Name *
                   </label>
                   <Input
-                    value={formData.firstName}
-                    onChange={(e) => handleInputChange('firstName', e.target.value)}
+value={formData.first_name_c}
+                    onChange={(e) => handleInputChange('first_name_c', e.target.value)}
                     placeholder="Enter first name"
-                    error={errors.firstName}
+                    error={errors.first_name_c}
                     disabled={loading}
                   />
                   {errors.firstName && (
@@ -168,10 +166,10 @@ if (formData.phone && !/^[\d\s\-+()]+$/.test(formData.phone)) {
                     Last Name *
                   </label>
                   <Input
-                    value={formData.lastName}
-                    onChange={(e) => handleInputChange('lastName', e.target.value)}
+value={formData.last_name_c}
+                    onChange={(e) => handleInputChange('last_name_c', e.target.value)}
                     placeholder="Enter last name"
-                    error={errors.lastName}
+                    error={errors.last_name_c}
                     disabled={loading}
                   />
                   {errors.lastName && (
@@ -187,11 +185,11 @@ if (formData.phone && !/^[\d\s\-+()]+$/.test(formData.phone)) {
                     Email *
                   </label>
                   <Input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange('email', e.target.value)}
+type="email"
+                    value={formData.email_c}
+                    onChange={(e) => handleInputChange('email_c', e.target.value)}
                     placeholder="Enter email address"
-                    error={errors.email}
+                    error={errors.email_c}
                     disabled={loading}
                   />
                   {errors.email && (
@@ -204,10 +202,10 @@ if (formData.phone && !/^[\d\s\-+()]+$/.test(formData.phone)) {
                   </label>
                   <Input
                     type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
+value={formData.phone_c}
+                    onChange={(e) => handleInputChange('phone_c', e.target.value)}
                     placeholder="Enter phone number"
-                    error={errors.phone}
+                    error={errors.phone_c}
                     disabled={loading}
                   />
                   {errors.phone && (
@@ -223,8 +221,8 @@ if (formData.phone && !/^[\d\s\-+()]+$/.test(formData.phone)) {
                     Company
                   </label>
                   <Input
-                    value={formData.company}
-                    onChange={(e) => handleInputChange('company', e.target.value)}
+value={formData.company_c}
+                    onChange={(e) => handleInputChange('company_c', e.target.value)}
                     placeholder="Enter company name"
                     disabled={loading}
                   />
@@ -234,8 +232,8 @@ if (formData.phone && !/^[\d\s\-+()]+$/.test(formData.phone)) {
                     Position
                   </label>
                   <Input
-                    value={formData.position}
-                    onChange={(e) => handleInputChange('position', e.target.value)}
+value={formData.position_c}
+                    onChange={(e) => handleInputChange('position_c', e.target.value)}
                     placeholder="Enter job title"
                     disabled={loading}
                   />
@@ -248,8 +246,8 @@ if (formData.phone && !/^[\d\s\-+()]+$/.test(formData.phone)) {
                   Status
                 </label>
                 <Select
-                  value={formData.status}
-                  onValueChange={(value) => handleInputChange('status', value)}
+value={formData.tags_c}
+                  onValueChange={(value) => handleInputChange('tags_c', value)}
                   disabled={loading}
                 >
                   {statusOptions.map((option) => (
@@ -266,8 +264,8 @@ if (formData.phone && !/^[\d\s\-+()]+$/.test(formData.phone)) {
                   Notes
                 </label>
                 <textarea
-                  value={formData.notes}
-                  onChange={(e) => handleInputChange('notes', e.target.value)}
+value={formData.notes_c || ''}
+                  onChange={(e) => handleInputChange('notes_c', e.target.value)}
                   placeholder="Add any additional notes..."
                   rows={4}
                   disabled={loading}
