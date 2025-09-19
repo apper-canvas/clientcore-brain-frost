@@ -72,20 +72,20 @@ const [showCreateForm, setShowCreateForm] = useState(false);
 
   // Filter contacts based on search and filters
   const filteredContacts = contacts.filter(contact => {
-    const matchesSearch = !searchTerm || 
-      `${contact.firstName} ${contact.lastName}`.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      contact.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      contact.company.toLowerCase().includes(searchTerm.toLowerCase());
+const matchesSearch = !searchTerm || 
+      `${contact.first_name_c} ${contact.last_name_c}`.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      contact.email_c?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      contact.company_c?.toLowerCase().includes(searchTerm.toLowerCase());
     
-    const matchesCompany = !filters.company || contact.company === filters.company;
-const matchesTags = !filters.tags || (contact.tags && contact.tags.includes(filters.tags));
+    const matchesCompany = !filters.company || contact.company_c === filters.company;
+    const matchesTags = !filters.tags || (contact.tags_c && contact.tags_c.split(',').includes(filters.tags));
 
     return matchesSearch && matchesCompany && matchesTags;
   });
 
   // Get unique companies and tags for filters
-  const companies = [...new Set(contacts.map(c => c.company))];
-const allTags = [...new Set(contacts.flatMap(c => c.tags || []))];
+const companies = [...new Set(contacts.map(c => c.company_c).filter(Boolean))];
+  const allTags = [...new Set(contacts.flatMap(c => c.tags_c ? c.tags_c.split(',') : []))];
 
   const filterOptions = [
     {
@@ -179,20 +179,20 @@ action={!searchTerm ? handleCreateClick : null}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-semibold text-lg">
-{(contact.firstName?.charAt(0) ?? '?')}{(contact.lastName?.charAt(0) ?? '?')}
+{(contact.first_name_c?.charAt(0) ?? '?')}{(contact.last_name_c?.charAt(0) ?? '?')}
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-slate-900 group-hover:text-primary transition-colors">
-                          {contact.firstName} {contact.lastName}
+{contact.first_name_c} {contact.last_name_c}
                         </h3>
-                        <p className="text-slate-600">{contact.email}</p>
+                        <p className="text-slate-600">{contact.email_c}</p>
                         <div className="flex items-center space-x-4 mt-1 text-sm text-slate-500">
                           <span className="flex items-center">
                             <ApperIcon name="Building2" size={14} className="mr-1" />
-                            {contact.company}
+                            {contact.company_c}
                           </span>
-                          {contact.position && (
-                            <span>• {contact.position}</span>
+                          {contact.position_c && (
+                            <span>• {contact.position_c}</span>
                           )}
                         </div>
                       </div>
@@ -201,19 +201,19 @@ action={!searchTerm ? handleCreateClick : null}
                     <div className="flex items-center space-x-4">
                       <div className="text-right">
                         <div className="flex flex-wrap gap-1 mb-2 justify-end">
-{(contact.tags || []).slice(0, 2).map(tag => (
+{(contact.tags_c ? contact.tags_c.split(',') : []).slice(0, 2).map(tag => (
                             <Badge key={tag} variant="primary" className="text-xs">
                               {tag}
                             </Badge>
                           ))}
-                          {(contact.tags || []).length > 2 && (
+                          {(contact.tags_c ? contact.tags_c.split(',') : []).length > 2 && (
                             <Badge variant="secondary" className="text-xs">
-                              +{(contact.tags || []).length - 2}
+                              +{(contact.tags_c ? contact.tags_c.split(',') : []).length - 2}
                             </Badge>
                           )}
                         </div>
                         <p className="text-sm text-slate-500">
-Last contact: {formatSafeDate(contact.lastContact, 'MMM dd, yyyy')}
+                          Last contact: {formatSafeDate(contact.last_contact_c, 'MMM dd, yyyy')}
                         </p>
                       </div>
                       

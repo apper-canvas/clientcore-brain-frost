@@ -157,8 +157,8 @@ value={formData.first_name_c}
                     error={errors.first_name_c}
                     disabled={loading}
                   />
-                  {errors.firstName && (
-                    <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>
+{errors.first_name_c && (
+                    <p className="mt-1 text-sm text-red-600">{errors.first_name_c}</p>
                   )}
                 </div>
                 <div>
@@ -172,8 +172,8 @@ value={formData.last_name_c}
                     error={errors.last_name_c}
                     disabled={loading}
                   />
-                  {errors.lastName && (
-                    <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>
+{errors.last_name_c && (
+                    <p className="mt-1 text-sm text-red-600">{errors.last_name_c}</p>
                   )}
                 </div>
               </div>
@@ -190,9 +190,9 @@ type="email"
                     onChange={(e) => handleInputChange('email_c', e.target.value)}
                     placeholder="Enter email address"
                     error={errors.email_c}
-                    disabled={loading}
+disabled={loading}
                   />
-                  {errors.email && (
+                  {errors.email_c && (
                     <p className="mt-1 text-sm text-red-600">{errors.email}</p>
                   )}
                 </div>
@@ -206,9 +206,9 @@ value={formData.phone_c}
                     onChange={(e) => handleInputChange('phone_c', e.target.value)}
                     placeholder="Enter phone number"
                     error={errors.phone_c}
-                    disabled={loading}
+disabled={loading}
                   />
-                  {errors.phone && (
+                  {errors.phone_c && (
                     <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
                   )}
                 </div>
