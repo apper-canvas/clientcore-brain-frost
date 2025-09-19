@@ -14,6 +14,16 @@ import Error from "@/components/ui/Error";
 import FilterBar from "@/components/molecules/FilterBar";
 import SearchBar from "@/components/molecules/SearchBar";
 
+// Safe date formatting utility
+const formatSafeDate = (date, formatString) => {
+  if (!date) return 'Never';
+  try {
+    return format(new Date(date), formatString);
+  } catch (error) {
+    return 'Invalid date';
+  }
+};
+
 const ContactList = ({ onContactSelect, onCreateContact }) => {
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -203,7 +213,7 @@ action={!searchTerm ? handleCreateClick : null}
                           )}
                         </div>
                         <p className="text-sm text-slate-500">
-                          Last contact: {format(new Date(contact.lastContact), 'MMM dd, yyyy')}
+Last contact: {formatSafeDate(contact.lastContact, 'MMM dd, yyyy')}
                         </p>
                       </div>
                       

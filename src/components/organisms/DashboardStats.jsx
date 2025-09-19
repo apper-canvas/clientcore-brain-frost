@@ -7,6 +7,7 @@ import Chart from "react-apexcharts";
 import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import StatCard from "@/components/molecules/StatCard";
+import { formatSafeDateLocale } from "@/utils/dateHelpers";
 
 const DashboardStats = () => {
   const [stats, setStats] = useState({
@@ -207,12 +208,12 @@ stats.recentActivities.map((activity) => (
 {activity.description || 'No description'}
                       </p>
 <p className="text-xs text-slate-600">
-                        {activity.date ? new Date(activity.date).toLocaleDateString('en-US', {
+                        {formatSafeDateLocale(activity.date, 'en-US', {
                           month: 'short',
                           day: 'numeric',
                           hour: '2-digit',
                           minute: '2-digit'
-                        }) : 'No date'}
+                        })}
                       </p>
                     </div>
                   </div>
