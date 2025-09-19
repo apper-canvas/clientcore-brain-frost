@@ -1,0 +1,114 @@
+[
+  {
+    "Id": 1,
+    "name": "TechCorp Solutions",
+    "industry": "Technology",
+    "size": "Enterprise",
+    "website": "www.techcorpsolutions.com",
+    "address": {
+      "street": "123 Innovation Drive",
+      "city": "San Francisco",
+      "state": "CA",
+      "zipCode": "94105"
+    },
+    "notes": "Leading enterprise software company with strong growth potential. Multiple decision makers engaged."
+  },
+  {
+    "Id": 2,
+    "name": "InnovatePlus",
+    "industry": "Software Development",
+    "size": "Medium",
+    "website": "www.innovateplus.io",
+    "address": {
+      "street": "456 Startup Blvd",
+      "city": "Austin",
+      "state": "TX",
+      "zipCode": "73301"
+    },
+    "notes": "Fast-growing startup with excellent technical team. High-value client with expansion opportunities."
+  },
+  {
+    "Id": 3,
+    "name": "Global Ventures",
+    "industry": "Consulting",
+    "size": "Large",
+    "website": "www.globalventures.com",
+    "address": {
+      "street": "789 Business Plaza",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10001"
+    },
+    "notes": "International consulting firm looking to modernize their operations. Long sales cycle but high value."
+  },
+  {
+    "Id": 4,
+    "name": "StartupCo",
+    "industry": "Fintech",
+    "size": "Small",
+    "website": "www.startupco.com",
+    "address": {
+      "street": "321 Entrepreneur Way",
+      "city": "Denver",
+      "state": "CO",
+      "zipCode": "80202"
+    },
+    "notes": "Promising fintech startup with solid funding. Great relationship with founder, multiple projects lined up."
+  },
+  {
+    "Id": 5,
+    "name": "MegaTech Industries",
+    "industry": "Manufacturing",
+    "size": "Enterprise",
+    "website": "www.megatechindustries.com",
+    "address": {
+      "street": "654 Industrial Ave",
+      "city": "Detroit",
+      "state": "MI",
+      "zipCode": "48201"
+    },
+    "notes": "Large manufacturing company with complex systems. Needs extensive integration work."
+  },
+  {
+    "Id": 6,
+    "name": "Creative Studio Pro",
+    "industry": "Design & Marketing",
+    "size": "Small",
+    "website": "www.creativestudiopro.com",
+    "address": {
+      "street": "987 Design District",
+      "city": "Portland",
+      "state": "OR",
+      "zipCode": "97205"
+    },
+    "notes": "Creative agency focused on brand design. Smaller budgets but quick decision-making process."
+  },
+  {
+    "Id": 7,
+    "name": "HealthPlus Solutions",
+    "industry": "Healthcare Technology",
+    "size": "Large",
+    "website": "www.healthplussolutions.com",
+    "address": {
+      "street": "246 Medical Center Dr",
+      "city": "Boston",
+      "state": "MA",
+      "zipCode": "02115"
+    },
+    "notes": "Healthcare technology company with compliance requirements. Technical team very engaged."
+  },
+  {
+    "Id": 8,
+    "name": "FinancePro Corp",
+    "industry": "Financial Services",
+    "size": "Enterprise",
+    "website": "www.financeprocorp.com",
+    "address": {
+      "street": "135 Wall Street",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10005"
+    },
+    "notes": "Traditional financial services firm. Lost recent deal but maintaining relationship for future opportunities."
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "Id": 1,
+    "type": "call",
+    "description": "Initial discovery call with Sarah Johnson",
+    "contactId": 1,
+    "dealId": 1,
+    "date": "2024-01-20T14:45:00Z",
+    "duration": 45
+  },
+  {
+    "Id": 2,
+    "type": "email",
+    "description": "Sent proposal to Michael Chen",
+    "contactId": 2,
+    "dealId": 2,
+    "date": "2024-01-18T11:20:00Z",
+    "duration": 0
+  },
+  {
+    "Id": 3,
+    "type": "meeting",
+    "description": "Requirements gathering session with Global Ventures team",
+    "contactId": 3,
+    "dealId": 3,
+    "date": "2024-01-22T09:30:00Z",
+    "duration": 90
+  },
+  {
+    "Id": 4,
+    "type": "call",
+    "description": "Contract negotiation call with David Thompson",
+    "contactId": 4,
+    "dealId": 4,
+    "date": "2024-01-19T15:10:00Z",
+    "duration": 60
+  },
+  {
+    "Id": 5,
+    "type": "email",
+    "description": "Follow-up email to Lisa Williams",
+    "contactId": 5,
+    "dealId": 5,
+    "date": "2024-01-21T13:45:00Z",
+    "duration": 0
+  },
+  {
+    "Id": 6,
+    "type": "meeting",
+    "description": "Design review meeting with Creative Studio Pro",
+    "contactId": 6,
+    "dealId": 6,
+    "date": "2024-01-17T10:15:00Z",
+    "duration": 120
+  },
+  {
+    "Id": 7,
+    "type": "call",
+    "description": "Technical discussion with Anna Garcia",
+    "contactId": 7,
+    "dealId": 7,
+    "date": "2024-01-16T16:30:00Z",
+    "duration": 75
+  },
+  {
+    "Id": 8,
+    "type": "email",
+    "description": "Thank you note to Robert Davis",
+    "contactId": 8,
+    "dealId": 8,
+    "date": "2024-01-23T14:20:00Z",
+    "duration": 0
+  },
+  {
+    "Id": 9,
+    "type": "call",
+    "description": "Check-in call with Sarah Johnson about training needs",
+    "contactId": 1,
+    "dealId": 9,
+    "date": "2024-01-21T16:00:00Z",
+    "duration": 30
+  },
+  {
+    "Id": 10,
+    "type": "meeting",
+    "description": "Project kickoff meeting with StartupCo",
+    "contactId": 4,
+    "dealId": 10,
+    "date": "2024-01-23T10:00:00Z",
+    "duration": 60
+  }
+]

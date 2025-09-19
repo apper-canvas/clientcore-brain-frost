@@ -1,0 +1,130 @@
+[
+  {
+    "Id": 1,
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "email": "sarah.johnson@techcorp.com",
+    "phone": "(555) 123-4567",
+    "company": "TechCorp Solutions",
+    "position": "VP of Marketing",
+    "tags": ["decision-maker", "marketing", "enterprise"],
+    "customFields": {
+      "source": "referral",
+      "industry": "technology"
+    },
+    "createdAt": "2024-01-15T10:30:00Z",
+    "lastContact": "2024-01-20T14:45:00Z"
+  },
+  {
+    "Id": 2,
+    "firstName": "Michael",
+    "lastName": "Chen",
+    "email": "m.chen@innovateplus.com",
+    "phone": "(555) 234-5678",
+    "company": "InnovatePlus",
+    "position": "CTO",
+    "tags": ["technical", "decision-maker", "startup"],
+    "customFields": {
+      "source": "website",
+      "industry": "software"
+    },
+    "createdAt": "2024-01-10T09:15:00Z",
+    "lastContact": "2024-01-18T11:20:00Z"
+  },
+  {
+    "Id": 3,
+    "firstName": "Emily",
+    "lastName": "Rodriguez",
+    "email": "emily.r@globalventures.com",
+    "phone": "(555) 345-6789",
+    "company": "Global Ventures",
+    "position": "Head of Operations",
+    "tags": ["operations", "enterprise", "warm-lead"],
+    "customFields": {
+      "source": "conference",
+      "industry": "consulting"
+    },
+    "createdAt": "2024-01-08T16:20:00Z",
+    "lastContact": "2024-01-22T09:30:00Z"
+  },
+  {
+    "Id": 4,
+    "firstName": "David",
+    "lastName": "Thompson",
+    "email": "david.thompson@startupco.com",
+    "phone": "(555) 456-7890",
+    "company": "StartupCo",
+    "position": "Founder & CEO",
+    "tags": ["founder", "startup", "high-value"],
+    "customFields": {
+      "source": "linkedin",
+      "industry": "fintech"
+    },
+    "createdAt": "2024-01-05T13:45:00Z",
+    "lastContact": "2024-01-19T15:10:00Z"
+  },
+  {
+    "Id": 5,
+    "firstName": "Lisa",
+    "lastName": "Williams",
+    "email": "l.williams@megatech.com",
+    "phone": "(555) 567-8901",
+    "company": "MegaTech Industries",
+    "position": "Director of Sales",
+    "tags": ["sales", "enterprise", "qualified"],
+    "customFields": {
+      "source": "referral",
+      "industry": "manufacturing"
+    },
+    "createdAt": "2024-01-12T11:30:00Z",
+    "lastContact": "2024-01-21T13:45:00Z"
+  },
+  {
+    "Id": 6,
+    "firstName": "James",
+    "lastName": "Brown",
+    "email": "james.brown@creativestudio.com",
+    "phone": "(555) 678-9012",
+    "company": "Creative Studio Pro",
+    "position": "Creative Director",
+    "tags": ["creative", "small-business", "prospect"],
+    "customFields": {
+      "source": "website",
+      "industry": "design"
+    },
+    "createdAt": "2024-01-07T14:20:00Z",
+    "lastContact": "2024-01-17T10:15:00Z"
+  },
+  {
+    "Id": 7,
+    "firstName": "Anna",
+    "lastName": "Garcia",
+    "email": "anna.garcia@healthplus.com",
+    "phone": "(555) 789-0123",
+    "company": "HealthPlus Solutions",
+    "position": "VP of Technology",
+    "tags": ["healthcare", "enterprise", "technical"],
+    "customFields": {
+      "source": "conference",
+      "industry": "healthcare"
+    },
+    "createdAt": "2024-01-03T08:45:00Z",
+    "lastContact": "2024-01-16T16:30:00Z"
+  },
+  {
+    "Id": 8,
+    "firstName": "Robert",
+    "lastName": "Davis",
+    "email": "robert.davis@financepro.com",
+    "phone": "(555) 890-1234",
+    "company": "FinancePro Corp",
+    "position": "CFO",
+    "tags": ["finance", "decision-maker", "enterprise"],
+    "customFields": {
+      "source": "referral",
+      "industry": "financial-services"
+    },
+    "createdAt": "2024-01-14T12:10:00Z",
+    "lastContact": "2024-01-23T14:20:00Z"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "Id": 1,
+    "title": "TechCorp Enterprise License",
+    "value": 25000,
+    "stage": "proposal",
+    "probability": 75,
+    "contactId": 1,
+    "companyId": 1,
+    "expectedCloseDate": "2024-02-15T00:00:00Z",
+    "notes": "Large enterprise deal with multi-year licensing potential. Strong interest from VP of Marketing.",
+    "createdAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "Id": 2,
+    "title": "InnovatePlus Custom Development",
+    "value": 45000,
+    "stage": "negotiation",
+    "probability": 85,
+    "contactId": 2,
+    "companyId": 2,
+    "expectedCloseDate": "2024-02-28T00:00:00Z",
+    "notes": "Custom software development project. CTO very engaged and budget approved.",
+    "createdAt": "2024-01-10T09:15:00Z"
+  },
+  {
+    "Id": 3,
+    "title": "Global Ventures Consulting Package",
+    "value": 15000,
+    "stage": "qualified",
+    "probability": 60,
+    "contactId": 3,
+    "companyId": 3,
+    "expectedCloseDate": "2024-03-10T00:00:00Z",
+    "notes": "Operations consulting engagement. Need to schedule follow-up with decision makers.",
+    "createdAt": "2024-01-08T16:20:00Z"
+  },
+  {
+    "Id": 4,
+    "title": "StartupCo MVP Development",
+    "value": 35000,
+    "stage": "closed-won",
+    "probability": 100,
+    "contactId": 4,
+    "companyId": 4,
+    "expectedCloseDate": "2024-01-25T00:00:00Z",
+    "notes": "Successfully closed MVP development contract. Project starts next month.",
+    "createdAt": "2024-01-05T13:45:00Z"
+  },
+  {
+    "Id": 5,
+    "title": "MegaTech Integration Project",
+    "value": 65000,
+    "stage": "lead",
+    "probability": 30,
+    "contactId": 5,
+    "companyId": 5,
+    "expectedCloseDate": "2024-04-01T00:00:00Z",
+    "notes": "Initial interest in system integration. Need to better understand requirements.",
+    "createdAt": "2024-01-12T11:30:00Z"
+  },
+  {
+    "Id": 6,
+    "title": "Creative Studio Brand Package",
+    "value": 8000,
+    "stage": "proposal",
+    "probability": 50,
+    "contactId": 6,
+    "companyId": 6,
+    "expectedCloseDate": "2024-02-20T00:00:00Z",
+    "notes": "Brand identity and website redesign project. Waiting on proposal feedback.",
+    "createdAt": "2024-01-07T14:20:00Z"
+  },
+  {
+    "Id": 7,
+    "title": "HealthPlus Platform Upgrade",
+    "value": 55000,
+    "stage": "qualified",
+    "probability": 70,
+    "contactId": 7,
+    "companyId": 7,
+    "expectedCloseDate": "2024-03-15T00:00:00Z",
+    "notes": "Healthcare platform modernization. Strong technical requirements match.",
+    "createdAt": "2024-01-03T08:45:00Z"
+  },
+  {
+    "Id": 8,
+    "title": "FinancePro Analytics Solution",
+    "value": 40000,
+    "stage": "closed-lost",
+    "probability": 0,
+    "contactId": 8,
+    "companyId": 8,
+    "expectedCloseDate": "2024-01-30T00:00:00Z",
+    "notes": "Lost to competitor. Budget was approved but they chose different vendor.",
+    "createdAt": "2024-01-14T12:10:00Z"
+  },
+  {
+    "Id": 9,
+    "title": "TechCorp Training Program",
+    "value": 12000,
+    "stage": "lead",
+    "probability": 40,
+    "contactId": 1,
+    "companyId": 1,
+    "expectedCloseDate": "2024-03-30T00:00:00Z",
+    "notes": "Additional training services for existing client. Good upsell opportunity.",
+    "createdAt": "2024-01-20T15:30:00Z"
+  },
+  {
+    "Id": 10,
+    "title": "StartupCo Phase 2 Development",
+    "value": 28000,
+    "stage": "negotiation",
+    "probability": 90,
+    "contactId": 4,
+    "companyId": 4,
+    "expectedCloseDate": "2024-02-10T00:00:00Z",
+    "notes": "Follow-up project after successful MVP delivery. High probability of closing.",
+    "createdAt": "2024-01-22T09:45:00Z"
+  }
+]
