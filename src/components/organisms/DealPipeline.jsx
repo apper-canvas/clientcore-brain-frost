@@ -180,6 +180,7 @@ const DealPipeline = ({ onDealSelect, onCreateDeal }) => {
                                 <ApperIcon name="Calendar" size={12} className="mr-1" />
                                 Close: {format(new Date(deal.expectedCloseDate), 'MMM dd')}
                               </div>
+                            )}
                             
                             {deal.notes && (
                               <p className="text-xs text-slate-600 line-clamp-2">
