@@ -289,4 +289,3 @@ class CompanyService {
 }
 
 export const companyService = new CompanyService();
-export const companyService = new CompanyService();

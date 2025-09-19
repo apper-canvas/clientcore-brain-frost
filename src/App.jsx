@@ -1,21 +1,21 @@
-import React, { createContext, useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
-import { ToastContainer } from 'react-toastify';
-import Layout from '@/components/organisms/Layout';
-import Dashboard from '@/components/pages/Dashboard';
-import Contacts from '@/components/pages/Contacts';
-import Companies from '@/components/pages/Companies';
-import Deals from '@/components/pages/Deals';
-import Reports from '@/components/pages/Reports';
-import Login from '@/components/pages/Login';
-import Signup from '@/components/pages/Signup';
-import Callback from '@/components/pages/Callback';
-import ErrorPage from '@/components/pages/ErrorPage';
-import ResetPassword from '@/components/pages/ResetPassword';
-import PromptPassword from '@/components/pages/PromptPassword';
-import NotFound from '@/components/pages/NotFound';
+import React, { createContext, useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { Provider } from "react-redux";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { ToastContainer } from "react-toastify";
+import Layout from "@/components/organisms/Layout";
+import PromptPassword from "@/components/pages/PromptPassword";
+import ResetPassword from "@/components/pages/ResetPassword";
+import Callback from "@/components/pages/Callback";
+import NotFound from "@/components/pages/NotFound";
+import Signup from "@/components/pages/Signup";
+import Deals from "@/components/pages/Deals";
+import Dashboard from "@/components/pages/Dashboard";
+import Companies from "@/components/pages/Companies";
+import Login from "@/components/pages/Login";
+import ErrorPage from "@/components/pages/ErrorPage";
+import Reports from "@/components/pages/Reports";
+import Contacts from "@/components/pages/Contacts";
 
 // Redux store setup
 const userSlice = {
@@ -36,7 +36,6 @@ const userSlice = {
   },
 };
 
-const { createSlice } = require('@reduxjs/toolkit');
 const userSliceCreated = createSlice(userSlice);
 export const { setUser, clearUser } = userSliceCreated.actions;
 
