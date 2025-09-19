@@ -8,17 +8,18 @@ import SearchBar from '@/components/molecules/SearchBar';
 import Loading from '@/components/ui/Loading';
 import Error from '@/components/ui/Error';
 import Empty from '@/components/ui/Empty';
+import CompanyForm from '@/components/organisms/CompanyForm';
 import { companyService } from '@/services/api/companyService';
 import { contactService } from '@/services/api/contactService';
 import { toast } from 'react-toastify';
 
 const Companies = () => {
-  const [companies, setCompanies] = useState([]);
+const [companies, setCompanies] = useState([]);
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-
+  const [showCreateForm, setShowCreateForm] = useState(false);
   const loadData = async () => {
     try {
       setLoading(true);
@@ -56,8 +57,14 @@ const filteredCompanies = companies.filter(company =>
     toast.info(`Selected company: ${company.name}`);
   };
 
-  const handleCreateCompany = () => {
-    toast.info('Create company functionality would be implemented here');
+const handleCreateCompany = () => {
+    setShowCreateForm(true);
+  };
+
+  const handleCompanyCreated = async (newCompany) => {
+    // Refresh the companies data after successful creation
+    await loadData();
+    setShowCreateForm(false);
   };
 
   const getSizeColor = (size) => {
@@ -196,6 +203,11 @@ const filteredCompanies = companies.filter(company =>
           })}
         </div>
       )}
+<CompanyForm
+        isOpen={showCreateForm}
+        onClose={() => setShowCreateForm(false)}
+        onCompanyCreated={handleCompanyCreated}
+      />
     </div>
   );
 };
