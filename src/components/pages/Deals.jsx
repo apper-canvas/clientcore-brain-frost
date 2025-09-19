@@ -5,9 +5,10 @@ import { toast } from 'react-toastify';
 
 const Deals = () => {
   const [showDealForm, setShowDealForm] = useState(false);
+  const [refreshKey, setRefreshKey] = useState(0);
 
   const handleDealSelect = (deal) => {
-    toast.info(`Selected deal: ${deal.title}`);
+    toast.info(`Selected deal: ${deal.Name || deal.title_c}`);
     // In a real app, this would open a deal detail view
   };
 
@@ -16,12 +17,14 @@ const Deals = () => {
   };
 
   const handleDealCreated = (newDeal) => {
-    // Refresh the pipeline by triggering a re-render
-    window.location.reload();
+    // Trigger pipeline refresh by updating key
+    setRefreshKey(prev => prev + 1);
+    setShowDealForm(false);
   };
-  return (
-<div>
+return (
+    <div>
       <DealPipeline 
+        key={refreshKey}
         onDealSelect={handleDealSelect}
         onCreateDeal={handleCreateDeal}
       />

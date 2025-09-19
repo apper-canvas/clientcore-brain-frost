@@ -49,19 +49,19 @@ const DealPipeline = ({ onDealSelect, onCreateDeal }) => {
   }, []);
 
   // Group deals by stage and calculate counts
-  const dealsByStage = stages.map(stage => {
-    const stageDeals = deals.filter(deal => deal.stage === stage.id);
+const dealsByStage = stages.map(stage => {
+    const stageDeals = deals.filter(deal => deal.stage_c === stage.id);
     return {
       ...stage,
       deals: stageDeals,
       count: stageDeals.length,
-      value: stageDeals.reduce((sum, deal) => sum + deal.value, 0)
+      value: stageDeals.reduce((sum, deal) => sum + (deal.value_c || 0), 0)
     };
   });
 
-  const getContactName = (contactId) => {
+const getContactName = (contactId) => {
     const contact = contacts.find(c => c.Id === parseInt(contactId));
-    return contact ? `${contact.firstName} ${contact.lastName}` : 'Unknown';
+    return contact ? contact.Name : 'Unknown';
   };
 
   const formatCurrency = (amount) => {
@@ -158,33 +158,33 @@ const DealPipeline = ({ onDealSelect, onCreateDeal }) => {
                         <CardContent className="p-4">
                           <div className="space-y-3">
                             <div>
-                              <h4 className="font-medium text-slate-900 group-hover:text-primary transition-colors line-clamp-1">
-                                {deal.title}
+<h4 className="font-medium text-slate-900 group-hover:text-primary transition-colors line-clamp-1">
+                                {deal.Name || deal.title_c}
                               </h4>
-                              <p className="text-sm text-slate-600 line-clamp-1">
-                                {getContactName(deal.contactId)}
+<p className="text-sm text-slate-600 line-clamp-1">
+                                {getContactName(deal.contact_id_c)}
                               </p>
                             </div>
                             
                             <div className="flex items-center justify-between">
-                              <div className="text-lg font-bold text-slate-900">
-                                {formatCurrency(deal.value)}
+<div className="text-lg font-bold text-slate-900">
+                                {formatCurrency(deal.value_c || 0)}
                               </div>
-                              <div className={`text-sm font-medium ${getProbabilityColor(deal.probability)}`}>
-                                {deal.probability}%
+                              <div className={`text-sm font-medium ${getProbabilityColor(deal.probability_c || 0)}`}>
+                                {deal.probability_c || 0}%
                               </div>
                             </div>
                             
-{deal.expectedCloseDate && (
+{deal.expected_close_date_c && (
                               <div className="flex items-center text-xs text-slate-500">
                                 <ApperIcon name="Calendar" size={12} className="mr-1" />
-                                Close: {format(new Date(deal.expectedCloseDate), 'MMM dd')}
+                                Close: {format(new Date(deal.expected_close_date_c), 'MMM dd')}
                               </div>
                             )}
                             
-                            {deal.notes && (
+{deal.notes_c && (
                               <p className="text-xs text-slate-600 line-clamp-2">
-                                {deal.notes}
+                                {deal.notes_c}
                               </p>
                             )}
                           </div>
