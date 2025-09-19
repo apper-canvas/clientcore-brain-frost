@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import StatCard from '@/components/molecules/StatCard';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/atoms/Card';
-import Loading from '@/components/ui/Loading';
-import Error from '@/components/ui/Error';
-import { dealService } from '@/services/api/dealService';
-import { contactService } from '@/services/api/contactService';
-import { activityService } from '@/services/api/activityService';
-import Chart from 'react-apexcharts';
+import React, { useEffect, useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/atoms/Card";
+import { dealService } from "@/services/api/dealService";
+import { contactService } from "@/services/api/contactService";
+import { activityService } from "@/services/api/activityService";
+import Chart from "react-apexcharts";
+import Loading from "@/components/ui/Loading";
+import Error from "@/components/ui/Error";
+import StatCard from "@/components/molecules/StatCard";
 
 const DashboardStats = () => {
   const [stats, setStats] = useState({
@@ -195,24 +195,24 @@ const DashboardStats = () => {
           <CardContent>
             <div className="space-y-4">
               {stats.recentActivities.length > 0 ? (
-                stats.recentActivities.map((activity) => (
+stats.recentActivities.map((activity) => (
                   <div key={activity.Id} className="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors">
                     <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-xs font-medium">
-                        {activity.type.charAt(0).toUpperCase()}
+                        {activity.type?.charAt(0)?.toUpperCase() || 'A'}
                       </span>
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-slate-900 truncate">
-                        {activity.description}
+{activity.description || 'No description'}
                       </p>
-                      <p className="text-xs text-slate-600">
-                        {new Date(activity.date).toLocaleDateString('en-US', {
+<p className="text-xs text-slate-600">
+                        {activity.date ? new Date(activity.date).toLocaleDateString('en-US', {
                           month: 'short',
                           day: 'numeric',
                           hour: '2-digit',
                           minute: '2-digit'
-                        })}
+                        }) : 'No date'}
                       </p>
                     </div>
                   </div>
