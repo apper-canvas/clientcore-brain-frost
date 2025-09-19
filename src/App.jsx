@@ -16,7 +16,7 @@ import Login from "@/components/pages/Login";
 import ErrorPage from "@/components/pages/ErrorPage";
 import Reports from "@/components/pages/Reports";
 import Contacts from "@/components/pages/Contacts";
-
+import Quotes from "@/components/pages/Quotes";
 // Redux store setup
 const userSlice = {
   name: 'user',
@@ -157,8 +157,9 @@ function AppContent() {
           <Route index element={<Dashboard />} />
           <Route path="contacts" element={<Contacts />} />
           <Route path="contacts/create" element={<Contacts />} />
-          <Route path="companies" element={<Companies />} />
+<Route path="companies" element={<Companies />} />
           <Route path="deals" element={<Deals />} />
+          <Route path="quotes" element={<Quotes />} />
           <Route path="reports" element={<Reports />} />
         </Route>
         <Route path="*" element={<NotFound />} />

@@ -7,11 +7,12 @@ import { cn } from '@/utils/cn';
 const Sidebar = ({ isOpen, onClose }) => {
   const location = useLocation();
 
-  const navigationItems = [
+const navigationItems = [
     { path: '/', label: 'Dashboard', icon: 'LayoutDashboard' },
     { path: '/contacts', label: 'Contacts', icon: 'Users' },
     { path: '/companies', label: 'Companies', icon: 'Building2' },
     { path: '/deals', label: 'Deals', icon: 'Target' },
+    { path: '/quotes', label: 'Quotes', icon: 'FileText' },
     { path: '/reports', label: 'Reports', icon: 'BarChart3' },
   ];
 
