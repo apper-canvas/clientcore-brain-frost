@@ -13,6 +13,7 @@ const navigationItems = [
     { path: '/companies', label: 'Companies', icon: 'Building2' },
     { path: '/deals', label: 'Deals', icon: 'Target' },
     { path: '/quotes', label: 'Quotes', icon: 'FileText' },
+    { path: '/sales-orders', label: 'Sales Orders', icon: 'ShoppingCart' },
     { path: '/reports', label: 'Reports', icon: 'BarChart3' },
   ];
 
