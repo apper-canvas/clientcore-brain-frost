@@ -59,7 +59,7 @@ const ContactForm = ({ isOpen, onClose, onContactCreated }) => {
       newErrors.email = 'Email is invalid';
     }
 
-    if (formData.phone && !/^[\d\s\-\+\(\)]+$/.test(formData.phone)) {
+if (formData.phone && !/^[\d\s\-+()]+$/.test(formData.phone)) {
       newErrors.phone = 'Phone number is invalid';
     }
 
