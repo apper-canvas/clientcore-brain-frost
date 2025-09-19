@@ -42,10 +42,10 @@ const Companies = () => {
   }, []);
 
   // Filter companies based on search
-  const filteredCompanies = companies.filter(company =>
+const filteredCompanies = companies.filter(company =>
     !searchTerm || 
-    company.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    company.industry.toLowerCase().includes(searchTerm.toLowerCase())
+    company.name_c?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    company.industry_c?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const getCompanyContacts = (companyName) => {
@@ -131,32 +131,32 @@ const Companies = () => {
                       <div className="flex items-start justify-between">
                         <div className="flex items-center space-x-3">
                           <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                            {company.name.charAt(0)}
+{company.name_c?.charAt(0) || '?'}
                           </div>
                           <div>
                             <h3 className="text-lg font-semibold text-slate-900 hover:text-primary transition-colors">
-                              {company.name}
+{company.name_c}
                             </h3>
-                            <p className="text-sm text-slate-600">{company.industry}</p>
+<p className="text-sm text-slate-600">{company.industry_c}</p>
                           </div>
                         </div>
-                        <Badge variant={getSizeColor(company.size)}>
-                          {company.size}
+<Badge variant={getSizeColor(company.size_c)}>
+                          {company.size_c}
                         </Badge>
                       </div>
 
-                      {company.website && (
+{company.website_c && (
                         <div className="flex items-center text-sm text-slate-600">
                           <ApperIcon name="Globe" size={14} className="mr-2" />
-                          <span className="truncate">{company.website}</span>
+                          <span className="truncate">{company.website_c}</span>
                         </div>
                       )}
 
-                      {company.address && (
+{company.address_c && (
                         <div className="flex items-center text-sm text-slate-600">
                           <ApperIcon name="MapPin" size={14} className="mr-2" />
                           <span className="truncate">
-                            {company.address.city}, {company.address.state}
+                            {company.address_c?.city}, {company.address_c?.state}
                           </span>
                         </div>
                       )}
@@ -181,10 +181,10 @@ const Companies = () => {
                         </div>
                       </div>
 
-                      {company.notes && (
+{company.notes_c && (
                         <div className="bg-slate-50 rounded-md p-3">
                           <p className="text-sm text-slate-700 line-clamp-2">
-                            {company.notes}
+                            {company.notes_c}
                           </p>
                         </div>
                       )}
