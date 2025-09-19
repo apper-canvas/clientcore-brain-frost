@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/atoms/Card";
-import ContactForm from "@/components/organisms/ContactForm";
 import { contactService } from "@/services/api/contactService";
 import { format } from "date-fns";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
 import Badge from "@/components/atoms/Badge";
+import ContactForm from "@/components/organisms/ContactForm";
 import Contacts from "@/components/pages/Contacts";
 import Loading from "@/components/ui/Loading";
 import Empty from "@/components/ui/Empty";
@@ -112,9 +112,9 @@ const [showCreateForm, setShowCreateForm] = useState(false);
         <div>
           <h2 className="text-2xl font-bold text-slate-900">Contacts</h2>
           <p className="text-slate-600">Manage your customer relationships</p>
-        </div>
+</div>
         <Button 
-          onClick={onCreateContact}
+          onClick={() => setShowCreateForm(true)}
           className="bg-gradient-to-r from-primary to-primary/90 text-white hover:from-primary/90 hover:to-primary/80"
         >
           <ApperIcon name="Plus" size={16} className="mr-2" />

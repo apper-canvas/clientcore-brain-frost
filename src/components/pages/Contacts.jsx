@@ -11,7 +11,7 @@ const Contacts = () => {
 const handleCreateContact = async (newContact) => {
     // Contact creation is handled by the ContactForm component
     // This callback receives the newly created contact for any additional processing
-    console.log('New contact created:', newContact);
+    toast.success(`Contact ${newContact.firstName} ${newContact.lastName} created successfully!`);
   };
   return (
     <div>
