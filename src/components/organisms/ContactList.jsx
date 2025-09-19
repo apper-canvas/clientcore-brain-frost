@@ -68,14 +68,14 @@ const [showCreateForm, setShowCreateForm] = useState(false);
       contact.company.toLowerCase().includes(searchTerm.toLowerCase());
     
     const matchesCompany = !filters.company || contact.company === filters.company;
-    const matchesTags = !filters.tags || contact.tags.includes(filters.tags);
+const matchesTags = !filters.tags || (contact.tags && contact.tags.includes(filters.tags));
 
     return matchesSearch && matchesCompany && matchesTags;
   });
 
   // Get unique companies and tags for filters
   const companies = [...new Set(contacts.map(c => c.company))];
-  const allTags = [...new Set(contacts.flatMap(c => c.tags))];
+const allTags = [...new Set(contacts.flatMap(c => c.tags || []))];
 
   const filterOptions = [
     {
@@ -191,14 +191,14 @@ action={!searchTerm ? handleCreateClick : null}
                     <div className="flex items-center space-x-4">
                       <div className="text-right">
                         <div className="flex flex-wrap gap-1 mb-2 justify-end">
-                          {contact.tags.slice(0, 2).map(tag => (
+{(contact.tags || []).slice(0, 2).map(tag => (
                             <Badge key={tag} variant="primary" className="text-xs">
                               {tag}
                             </Badge>
                           ))}
-                          {contact.tags.length > 2 && (
+                          {(contact.tags || []).length > 2 && (
                             <Badge variant="secondary" className="text-xs">
-                              +{contact.tags.length - 2}
+                              +{(contact.tags || []).length - 2}
                             </Badge>
                           )}
                         </div>
