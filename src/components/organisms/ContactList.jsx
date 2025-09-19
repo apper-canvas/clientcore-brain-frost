@@ -169,7 +169,7 @@ action={!searchTerm ? handleCreateClick : null}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-semibold text-lg">
-                        {contact.firstName.charAt(0)}{contact.lastName.charAt(0)}
+{(contact.firstName?.charAt(0) ?? '?')}{(contact.lastName?.charAt(0) ?? '?')}
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-slate-900 group-hover:text-primary transition-colors">
