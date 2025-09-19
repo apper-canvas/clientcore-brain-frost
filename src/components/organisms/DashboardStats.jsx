@@ -7,7 +7,7 @@ import Chart from "react-apexcharts";
 import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import StatCard from "@/components/molecules/StatCard";
-import { formatSafeDateLocale } from "@/utils/dateHelpers";
+import { formatSafeDateLocale } from "@/utils/dateUtils";
 
 const DashboardStats = () => {
   const [stats, setStats] = useState({
