@@ -8,11 +8,11 @@ const Contacts = () => {
     // In a real app, this would open a contact detail view
   };
 
-  const handleCreateContact = () => {
-    toast.info('Create contact functionality would be implemented here');
-    // In a real app, this would open a contact creation form
+const handleCreateContact = async (newContact) => {
+    // Contact creation is handled by the ContactForm component
+    // This callback receives the newly created contact for any additional processing
+    console.log('New contact created:', newContact);
   };
-
   return (
     <div>
       <ContactList 

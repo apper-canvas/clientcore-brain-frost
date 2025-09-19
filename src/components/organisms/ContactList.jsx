@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import ApperIcon from '@/components/ApperIcon';
-import { Card, CardContent } from '@/components/atoms/Card';
-import Button from '@/components/atoms/Button';
-import Badge from '@/components/atoms/Badge';
-import SearchBar from '@/components/molecules/SearchBar';
-import FilterBar from '@/components/molecules/FilterBar';
-import Loading from '@/components/ui/Loading';
-import Error from '@/components/ui/Error';
-import Empty from '@/components/ui/Empty';
-import { contactService } from '@/services/api/contactService';
-import { format } from 'date-fns';
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/atoms/Card";
+import ContactForm from "@/components/organisms/ContactForm";
+import { contactService } from "@/services/api/contactService";
+import { format } from "date-fns";
+import ApperIcon from "@/components/ApperIcon";
+import Button from "@/components/atoms/Button";
+import Badge from "@/components/atoms/Badge";
+import Contacts from "@/components/pages/Contacts";
+import Loading from "@/components/ui/Loading";
+import Empty from "@/components/ui/Empty";
+import Error from "@/components/ui/Error";
+import FilterBar from "@/components/molecules/FilterBar";
+import SearchBar from "@/components/molecules/SearchBar";
 
 const ContactList = ({ onContactSelect, onCreateContact }) => {
   const [contacts, setContacts] = useState([]);
@@ -36,9 +38,27 @@ const ContactList = ({ onContactSelect, onCreateContact }) => {
     }
   };
 
+const [showCreateForm, setShowCreateForm] = useState(false);
+
   useEffect(() => {
     loadContacts();
   }, []);
+
+  const handleCreateClick = () => {
+    setShowCreateForm(true);
+  };
+
+  const handleCreateFormClose = () => {
+    setShowCreateForm(false);
+  };
+
+  const handleContactCreated = (newContact) => {
+    // Refresh the contacts list
+    loadContacts();
+    setShowCreateForm(false);
+    // Call parent callback if provided
+    onCreateContact && onCreateContact(newContact);
+  };
 
   // Filter contacts based on search and filters
   const filteredContacts = contacts.filter(contact => {
@@ -131,7 +151,7 @@ const ContactList = ({ onContactSelect, onCreateContact }) => {
           title={searchTerm ? "No contacts found" : "No contacts yet"}
           description={searchTerm ? "Try adjusting your search or filters" : "Add your first contact to get started"}
           icon="Users"
-          action={!searchTerm ? onCreateContact : null}
+action={!searchTerm ? handleCreateClick : null}
           actionLabel="Add Contact"
         />
       ) : (
@@ -194,7 +214,7 @@ const ContactList = ({ onContactSelect, onCreateContact }) => {
                         <Button variant="ghost" size="sm">
                           <ApperIcon name="Mail" size={16} />
                         </Button>
-                        <Button variant="ghost" size="sm">
+<Button variant="ghost" size="sm">
                           <ApperIcon name="MoreVertical" size={16} />
                         </Button>
                       </div>
@@ -206,6 +226,13 @@ const ContactList = ({ onContactSelect, onCreateContact }) => {
           ))}
         </div>
       )}
+
+      {/* Contact Form Modal */}
+      <ContactForm
+        isOpen={showCreateForm}
+        onClose={handleCreateFormClose}
+        onContactCreated={handleContactCreated}
+      />
     </div>
   );
 };

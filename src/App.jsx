@@ -13,9 +13,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Layout />}>
+<Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="contacts" element={<Contacts />} />
+            <Route path="contacts/create" element={<Contacts />} />
             <Route path="companies" element={<Companies />} />
             <Route path="deals" element={<Deals />} />
             <Route path="reports" element={<Reports />} />
